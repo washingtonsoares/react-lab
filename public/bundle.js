@@ -63,14 +63,38 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-console.log('It works!');
+"use strict";
+class Pessoa {
+  constructor(nome) {
+    this.nome = nome;
+  }
+
+  toString() {
+      return `Pessoa : ${this.nome}`;
+  }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = Pessoa;
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pessoa__ = __webpack_require__(0);
+
+
+const pessoa = new __WEBPACK_IMPORTED_MODULE_0__pessoa__["a" /* default */]('Washington');
+console.log(pessoa.toString());
 
 
 /***/ })
