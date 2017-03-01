@@ -1,7 +1,8 @@
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './scripts/index.js',
+  entry: './scripts/index.jsx',
   output: {
     path: __dirname + '/public',
     filename: './bundle.js'
@@ -12,9 +13,13 @@ module.exports = {
   },
   module: {
     loaders: [{
-        test: /.js?$/,
+        test: /.js[x]?$/,
         loader: 'babel-loader',
         exclude: '/node_modules/'
+      },
+      {
+          test: /\.css$/,
+          loader:  'style-loader!css-loader'
       }]
   }
 }
