@@ -3,7 +3,7 @@ import Member from './member'
 
 export default props => (
   <div>
-    <h1>Familia</h1>
-    {props.children}
+    <h1>Familia {props.lastName}</h1>
+    {React.cloneElement(props.children, {...props})}
   </div>
 )

@@ -5,8 +5,8 @@ import Member from './member'
 
 ReactDOM.render(
   <div>
-    <Family>
-      <Member name="José" lastName="da silva"></Member>
+    <Family lastName="da silva">
+      <Member name="José"></Member>
     </Family>
   </div>
   , document.querySelector('div[data-js="app"]')
