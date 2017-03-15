@@ -1,10 +1,9 @@
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path')
 
 module.exports = {
   entry: './scripts/index.jsx',
   output: {
-    path: __dirname + '/public',
+    path: path.join(__dirname, 'public'),
     filename: './bundle.js'
   },
   devServer: {
@@ -16,13 +15,13 @@ module.exports = {
   },
   module: {
     loaders: [{
-        test: /.js[x]?$/,
-        loader: 'babel-loader',
-        exclude: '/node_modules/'
-      },
-      {
-          test: /\.css$/,
-          loader:  'style-loader!css-loader'
-      }]
+      test: /.js[x]?$/,
+      loader: 'babel-loader',
+      exclude: '/node_modules/'
+    },
+    {
+      test: /\.css$/,
+      loader: 'style-loader!css-loader'
+    }]
   }
 }
