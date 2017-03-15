@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "server": "webpack-dev-server --progress --colors --inline --hot",
-    "build": "standard && webpack"
+    "server": "webpack-dev-server --progress --colors --inline --hot --port 3000",
+    "build": "standard && webpack --progress -p"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -16,8 +16,13 @@
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
+    "axios": "^0.15.3",
+    "bootstrap": "^3.3.7",
+    "file-loader": "^0.10.1",
+    "font-awesome": "^4.7.0",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-router": "3.0.2"
   },
   "standard": {
     "ignore": [

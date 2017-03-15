@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Field from './field'
+import App from './main/app'
 
 ReactDOM.render(
   <div>
-    <Field initialValue='ÉOQ' />
+    <App />
   </div>
   , document.querySelector('div[data-js="app"]')
  )

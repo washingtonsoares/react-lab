@@ -1,18 +1,25 @@
 const path = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: './scripts/index.jsx',
+  entry: './src/index.jsx',
   output: {
     path: path.join(__dirname, 'public'),
-    filename: './bundle.js'
+    filename: './app.js'
   },
   devServer: {
     port: 8080,
     contentBase: './public'
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+    alias: {
+      module: path.join(__dirname, 'node_modules')
+    }
   },
+  plugins: [
+    new ExtractTextPlugin('app.css')
+  ],
   module: {
     loaders: [{
       test: /.js[x]?$/,
@@ -21,7 +28,10 @@ module.exports = {
     },
     {
       test: /\.css$/,
-      loader: 'style-loader!css-loader'
+      loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
+    }, {
+      test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
+      loader: 'file-loader'
     }]
   }
 }
