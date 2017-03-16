@@ -5,11 +5,12 @@ export default props => {
   const renderRows = () => {
     const list = props.list || []
     return list.map(item => (
-      <tr key={item._id}>
+      <tr key={item._id} className={item.done ? 'success markedAsDone' : ''}>
         <td>{item.description}</td>
         <td>
-          <IconButton style='danger' icon='trash-o' onClick={() => props.handleRemove(item)} />
-          <IconButton style='primary' icon='plus' onClick={props.handleAdd} />
+          <IconButton style='success' icon='check' hide={item.done} onClick={() => props.handleMarkAsDone(item)} />
+          <IconButton style='warning' icon='undo' hide={!item.done} onClick={() => props.handleMarkAsPending(item)} />
+          <IconButton style='danger' icon='trash-o' hide={!item.done} onClick={() => props.handleRemove(item)} />
         </td>
       </tr>
     ))
