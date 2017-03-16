@@ -1,5 +1,9 @@
 import React from 'react'
+import PageHeader from '../template/pageHeader'
 
 export default props => (
-  <h1>Sobre</h1>
+  <div>
+    <PageHeader name='Sobre' small='Nós' />
+    Developed by <a target='_new' href='http://github.com/washingtonsoares'>Washington Soares</a>
+  </div>
 )
