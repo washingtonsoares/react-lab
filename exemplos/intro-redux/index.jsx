@@ -2,17 +2,18 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { combineReducers, createStore } from 'redux'
 import { Provider } from 'react-redux'
-
-import counterReducer from './counterReducer'
-import Counter from './counter'
+import fieldReducer from './fieldReducer'
 
 const reducers = combineReducers({
-  counter: counterReducer
+  field: fieldReducer
 })
+
+
+import Field from './field'
 
 ReactDOM.render(
   <Provider store={createStore(reducers)}>
-    <Counter />
+    <Field />
   </Provider>
   , document.querySelector('div[data-js="app"]')
  )
