@@ -28,9 +28,6 @@ const TodoList = props => {
       <If test={!props.list.length && !props.description}>
         <Alert type='info' message=' Você ainda não possui itens no seu todo list !' />
       </If>
-      <If test={!props.list.length && props.description}>
-        <Alert type='warning' message=' Nenhum resultado encontrado para sua pesquisa :(' />
-      </If>
       <If test={props.list.length}>
         <table className='table'>
           <thead>
